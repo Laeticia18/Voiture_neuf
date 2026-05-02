@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Voiti Nèf</title>
+  <link href="voitinèf.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <main>
+    <div class="titre">
+      Voiti Nèf Vinn Achtéy
+    </div>
+    <img class="logo" src="logo.png">
+    <navbar class="nav">
+       <ul>
+         <li>
+           <a href="index.html" class="ex">Akèy</a>
+         </li>
+         <li>
+           <a id="ici">Voiti An Nou</a>
+         </li>
+         <li>
+           <a href="Apropos.html" class="ex">À Pwopo </a>
+         </li>
+       </ul> 
+    </navbar>
+      <div class="containerx">
+          <h1>Vente de Voitures</h1>
+          <div class="voiti-list">
+              <div class="voiti">
+                  <img src="audi_a3.png" >
+                  <h2>Audi A3</h2>
+                  <p class="prila">35,000 € </p>
+                  <a href="#" class="buy-btn">Achtéy</a>
+              </div>
+              <div class="voiti">
+                  <img src="citroen_c3.png" >
+                  <h2>Citröen C3</h2>
+                  <p class="prila">19,500 €</p>
+                  <a href="#" class="buy-btn">Achtéy</a>
+              </div>
+              <div class="voiti">
+                  <img src="vw_polo-.png" >
+                  <h2>Volkswagen Polo</h2>
+                  <p class="prila">22,000 €
+                    <ul>
+                      <li>Année : 2023</li>
+                      <li>Cylindrée : 1.0L</li>
+                      <li>Puissance : 95 ch</li>
+                      <li>Carburant : Essence</li>
+                    </ul>
+                  </p>
+                  <a href="#" class="buy-btn">Achtéy</a>
+              </div>
+              <div class="voiti">
+                  <img src="fiat_500.png">
+                  <h2>Fiat 500</h2>
+                  <p class="prila">18,000 €
+                    <ul>
+                      <li>Année : 2023</li>
+                      <li>Cylindrée : 1.0L Hybrid</li>
+                      <li>Puissance : 70 ch</li>
+                      <li>Carburant : Hybride</li>
+                    </ul>
+                  </p>
+                  <a href="#" class="buy-btn">Achtéy</a>
+              </div>
+          </div>
+      </div>
+  </main>
+  <footer>
+   &copy; Voiti Nèf,On koté en gwadeloupe 97100 Basse-Terre <a href="Conditions d'Utilisation.txt"><p class="condi">Conditions d'utilisation</p></a>
+    
+    <div class="résola">
+        <a href="https://x.com/"><img src="logox.png" ></a>
+        <a href="https://www.instagram.com/"><img src="instagram.png" ></a>
+        <a href="https://www.facebook.com/"><img src="logof2.png" ></a>
+    </div>
+</footer>
+
+<button id="myBtn">En savoir plus</button>
+
+
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>
+      <div class="containerx">
+        <h1>Vente de Voitures</h1>
+        <div class="voiti-list">
+            <div class="voiti">
+                <img src="audi_a3.png" >
+                <h2>Audi A3</h2>
+                <p class="prila">35,000 € </p>
+            </div>
+            <div class="voiti">
+                <img src="citroen_c3.png" >
+                <h2>Citröen C3</h2>
+                <p class="prila">19,500 €</p>
+            </div>
+            <div class="voiti">
+                <img src="vw_polo-.png" >
+                <h2>Volkswagen Polo</h2>
+                <p class="prila">22,000 €
+                  <ul>
+                    <li>Année : 2023</li>
+                    <li>Cylindrée : 1.0L</li>
+                    <li>Puissance : 95 ch</li>
+                    <li>Carburant : Essence</li>
+                  </ul>
+                </p>
+            </div>
+            <div class="voiti">
+                <img src="fiat_500.png">
+                <h2>Fiat 500</h2>
+                <p class="prila">18,000 €
+                  <ul>
+                    <li>Année : 2023</li>
+                    <li>Cylindrée : 1.0L Hybrid</li>
+                    <li>Puissance : 70 ch</li>
+                    <li>Carburant : Hybride</li>
+                  </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+    </p>
+  </div>
+
+</div>
+
+<script>
+
+var modal = document.getElementById("myModal");
+
+
+var btn = document.getElementById("myBtn");
+
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+
+  
