@@ -16,5 +16,3 @@ To install and run the project locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/Laeticia18/Voiti-n-f`
 2. Open `index.html` in your browser.
 
-## License
-This project is licensed under the MIT License.
