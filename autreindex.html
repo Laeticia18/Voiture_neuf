@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voiti Nèf — Voitures Neuves en Guadeloupe</title>
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVBAR (chargée dynamiquement) -->
+  <div id="navbar"></div>
+
+  <!-- HÉRO / CARROUSEL -->
+  <section class="hero" aria-label="Carrousel de présentation">
+    <div class="carousel-track">
+      <div class="carousel-slide" style="background-image: url('carrousel_1.jpg')">
+        <img src="carroussel\carrousel_1.jpg" style="background-image: url('carrousel_1.jpg')">
+      </div>
+      <div class="carousel-slide" style="background-image: url('carrousel_2.jpg')"></div>
+      <div class="carousel-slide" style="background-image: url('carrousel_3.jpg')"></div>
+      <div class="carousel-slide" style="background-image: url('carrousel_4.jpg')"></div>
+      <div class="carousel-slide" style="background-image: url('carrousel_5.jpg')"></div>
+      <div class="carousel-slide" style="background-image: url('carrousel_6.jpg')"></div>
+    </div>
+
+    <!-- Contenu héro -->
+    <div class="hero-content">
+      <p class="eyebrow">Voitures neuves en Guadeloupe</p>
+      <h1>Votre prochain<br>véhicule, ici.</h1>
+      <p>Une gamme diversifiée de véhicules neufs adaptés à tous les budgets, avec un accompagnement personnalisé.</p>
+      <a href="voiture.html" class="btn-primary">Découvrir nos voitures →</a>
+    </div>
+
+    <!-- Flèches -->
+    <div class="carousel-arrows">
+      <button class="carousel-btn prev" aria-label="Diapositive précédente">&#8249;</button>
+      <button class="carousel-btn next" aria-label="Diapositive suivante">&#8250;</button>
+    </div>
+
+    <!-- Points de navigation -->
+    <div class="carousel-dots" role="tablist" aria-label="Navigation du carrousel">
+      <button class="carousel-dot active" aria-label="Diapositive 1"></button>
+      <button class="carousel-dot" aria-label="Diapositive 2"></button>
+      <button class="carousel-dot" aria-label="Diapositive 3"></button>
+      <button class="carousel-dot" aria-label="Diapositive 4"></button>
+      <button class="carousel-dot" aria-label="Diapositive 5"></button>
+      <button class="carousel-dot" aria-label="Diapositive 6"></button>
+    </div>
+  </section>
+
+  <!-- PRÉSENTATION -->
+  <section class="section" style="background: var(--cream);">
+    <div class="section-center">
+      <p class="section-eyebrow">Qui sommes-nous</p>
+      <h2 class="section-title">Le partenaire idéal pour votre prochain véhicule</h2>
+      <p class="section-subtitle">
+        Basée en Guadeloupe, Voiti Nèf propose une gamme diversifiée de véhicules neufs adaptés à tous les budgets. Avec une équipe expérimentée et passionnée, nous mettons un point d'honneur à fournir un service personnalisé et un accompagnement complet à chacun de nos clients.
+      </p>
+    </div>
+
+    <!-- Chiffres clés -->
+    <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; max-width: 700px; margin: 0 auto;">
+      <div style="text-align: center;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--bordeaux);">2020</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px;">Fondée en</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--bordeaux);">100+</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px;">Clients satisfaits</div>
+      </div>
+      <div style="text-align: center;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--bordeaux);">4</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px;">Modèles disponibles</div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="apropos.html" class="btn-outline">En savoir plus</a>
+    </div>
+  </section>
+
+  <!-- APERÇU VÉHICULES -->
+  <section class="section">
+    <div class="section-center">
+      <p class="section-eyebrow">Notre sélection</p>
+      <h2 class="section-title">Des véhicules pour tous les goûts</h2>
+    </div>
+
+    <div class="cars-grid" style="max-width: 1100px; margin: 0 auto;">
+      <!-- Audi A3 -->
+      <div class="car-card">
+        <div class="car-img-wrap">
+          <img src="voiture\audi_a3.png" alt="Audi A3" onerror="this.src=''; this.parentElement.style.background='#eee';">
+        </div>
+        <div class="car-body">
+          <p class="car-brand">Audi</p>
+          <h3 class="car-name">A3</h3>
+          <ul class="car-specs">
+            <li>Année&nbsp;<span>2023</span></li>
+            <li>Cylindrée&nbsp;<span>2.0L</span></li>
+            <li>Puissance&nbsp;<span>150 ch</span></li>
+            <li>Carburant&nbsp;<span>Diesel</span></li>
+          </ul>
+          <div class="car-footer">
+            <span class="car-price">35 000 €</span>
+            <a href="voiture.html" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Voir →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Citroën C3 -->
+      <div class="car-card">
+        <div class="car-img-wrap">
+          <img src="voiture\citroen_c3.png" alt="Citroën C3" onerror="this.src=''; this.parentElement.style.background='#eee';">
+        </div>
+        <div class="car-body">
+          <p class="car-brand">Citroën</p>
+          <h3 class="car-name">C3</h3>
+          <ul class="car-specs">
+            <li>Année&nbsp;<span>2023</span></li>
+            <li>Cylindrée&nbsp;<span>1.2L</span></li>
+            <li>Puissance&nbsp;<span>110 ch</span></li>
+            <li>Carburant&nbsp;<span>Essence</span></li>
+          </ul>
+          <div class="car-footer">
+            <span class="car-price">19 500 €</span>
+            <a href="voiture.html" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Voir →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- VW Polo -->
+      <div class="car-card">
+        <div class="car-img-wrap">
+          <img src="voiture\vw_polo-.png" alt="Volkswagen Polo" onerror="this.src=''; this.parentElement.style.background='#eee';">
+        </div>
+        <div class="car-body">
+          <p class="car-brand">Volkswagen</p>
+          <h3 class="car-name">Polo</h3>
+          <ul class="car-specs">
+            <li>Année&nbsp;<span>2023</span></li>
+            <li>Cylindrée&nbsp;<span>1.0L</span></li>
+            <li>Puissance&nbsp;<span>95 ch</span></li>
+            <li>Carburant&nbsp;<span>Essence</span></li>
+          </ul>
+          <div class="car-footer">
+            <span class="car-price">22 000 €</span>
+            <a href="voiture.html" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Voir →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fiat 500 -->
+      <div class="car-card">
+        <div class="car-img-wrap">
+          <img src="voiture\fiat_500.png" alt="Fiat 500" onerror="this.src=''; this.parentElement.style.background='#eee';">
+        </div>
+        <div class="car-body">
+          <p class="car-brand">Fiat</p>
+          <h3 class="car-name">500</h3>
+          <ul class="car-specs">
+            <li>Année&nbsp;<span>2023</span></li>
+            <li>Cylindrée&nbsp;<span>1.0L Hybrid</span></li>
+            <li>Puissance&nbsp;<span>70 ch</span></li>
+            <li>Carburant&nbsp;<span>Hybride</span></li>
+          </ul>
+          <div class="car-footer">
+            <span class="car-price">18 000 €</span>
+            <a href="voiture.html" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Voir →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="voiture.html" class="btn-primary">Voir tous nos véhicules →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Voiti Nèf</div>
+        <div class="footer-address">On koté en gwadeloupe, 97100 Basse-Terre</div>
+      </div>
+      <div class="footer-legal">
+        <a href="Conditions d'Utilisation.txt">Conditions d'utilisation</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://twitter.com/" aria-label="Twitter / X" title="Twitter / X">&#120143;</a>
+        <a href="https://www.instagram.com/" aria-label="Instagram" title="Instagram">&#9432;</a>
+        <a href="https://www.facebook.com/" aria-label="Facebook" title="Facebook">f</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Voiti Nèf &mdash; Tous droits réservés
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,76 +1,54 @@
+/* ── CHARGEMENT DE LA NAVBAR ─────────────────────────── */
+fetch("nav.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("navbar").innerHTML = html;
+    setActiveLink();
+  });
 
-(function () {
-    "use stict"
-    const slideTimeout = 2000;
+function setActiveLink() {
+  const page = window.location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll("nav a.nav-link").forEach(a => {
+    const href = a.getAttribute("href");
+    if (href === page) a.classList.add("active");
+  });
+}
 
-    const prev = document.querySelector('#prev');
-    const next = document.querySelector('#next');
+/* ── CARROUSEL ───────────────────────────────────────── */
+function initCarousel() {
+  const track = document.querySelector(".carousel-track");
+  const dots  = document.querySelectorAll(".carousel-dot");
+  if (!track) return;
 
-    const $slides = document.querySelectorAll('.slide');
+  let current = 0;
+  const total = track.children.length;
+  let timer;
 
-    let $dots;
+  function goTo(n) {
+    current = (n + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle("active", i === current));
+  }
 
-    let intervalId;
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
 
-    let currentSlide = 1;
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(next, 5000);
+  }
 
-    function slideTo(index) {
+  document.querySelector(".carousel-btn.next")
+    ?.addEventListener("click", () => { next(); startAuto(); });
+  document.querySelector(".carousel-btn.prev")
+    ?.addEventListener("click", () => { prev(); startAuto(); });
 
-        currentSlide = index >= $slides.length || index < 1 ? 0 : index;
+  dots.forEach((d, i) =>
+    d.addEventListener("click", () => { goTo(i); startAuto(); })
+  );
 
-        $slides.forEach($elt => $elt.style.transform = `translateX(-${currentSlide * 100}%)`);
+  goTo(0);
+  startAuto();
+}
 
-        $dots.forEach(($elt, key) => $elt.classList = `dot ${key === currentSlide? 'active': 'inactive'}`);
-    }
-
-    function showSlide() {
-        slideTo(currentSlide);
-        currentSlide++;
-    }
-
-    for (let i = 1; i <= $slides.length; i++) {
-        let dotClass = i == currentSlide ? 'active' : 'inactive';
-        let $dot = `<span data-slidId="${i}" class="dot ${dotClass}"></span>`;
-        document.querySelector('.carousel-dots').innerHTML += $dot;
-    }
-
-    $dots = document.querySelectorAll('.dot');
-
-    $dots.forEach(($elt, key) => $elt.addEventListener('click', () => slideTo(key)));
-
-    prev.addEventListener('click', () => slideTo(--currentSlide))
-
-    next.addEventListener('click', () => slideTo(++currentSlide))
- 
-    intervalId = setInterval(showSlide, slideTimeout)
-
-    $slides.forEach($elt => {
-        let startX;
-        let endX;
-  
-        $elt.addEventListener('mouseover', () => {
-            clearInterval(intervalId);
-        }, false)
-  
-        $elt.addEventListener('mouseout', () => {
-            intervalId = setInterval(showSlide, slideTimeout);
-        }, false);
-
-        $elt.addEventListener('touchstart', (event) => {
-            startX = event.touches[0].clientX;
-        });
- 
-        $elt.addEventListener('touchend', (event) => {
-            endX = event.changedTouches[0].clientX;
-
-            if (startX > endX) {
-                slideTo(currentSlide + 1);
-
-            } else if (startX < endX) {
-                slideTo(currentSlide - 1);
-            }
-        });
-    })
-})()
-
-
+document.addEventListener("DOMContentLoaded", initCarousel);
